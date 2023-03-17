@@ -12,7 +12,7 @@ public class BlockChain {
         public BlockNode parent;
         public ArrayList<BlockNode> children;
         public int height;
-        // utxo pool for making a new block on top of this block
+        // utxo pool for making a new block on top of this block (block can be any of crypto token/coin)
         private UTXOPool uPool;
 
         public BlockNode(Block b, BlockNode parent, UTXOPool uPool) {
@@ -69,7 +69,7 @@ public class BlockChain {
     }
 
     /**
-     * Get the transaction pool to mine a new block
+     * Get the transaction pool to mine a new block (Stake/halving)
      */
     public TransactionPool getTransactionPool() {
         return txPool;
@@ -116,7 +116,7 @@ public class BlockChain {
     }
 
     /**
-     * Add a transaction to the transaction pool
+     * Add a transaction to the transaction pool (BTC, Eth etc.)
      */
     public void addTransaction(Transaction tx) {
         txPool.addTransaction(tx);
